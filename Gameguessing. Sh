@@ -1,1 +1,23 @@
-
+function guessing () 
+{
+true_a=$(ls -l|grep "^_"|wc -1)
+flag=0
+while [ $flag -eq 0 ]
+do
+echo " guess how many files are inside directory "
+read num
+if [ $num -lt $true_a ]
+then
+echo "guess is less than the number of files in directory"
+elif [ $num -gt $true_a ]
+then
+echo "guess is greater than number of files in directory"
+else
+echo "guess is correct"
+flag=1
+break;
+fi
+done
+}
+echo "guess number of files in current directory"
+guessing
