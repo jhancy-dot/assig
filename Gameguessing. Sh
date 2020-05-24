@@ -1,23 +1,19 @@
-function guessing () 
+function guess () 
 {
-true_a=$(ls -l|grep "^_"|wc -1)
-flag=0
-while [ $flag -eq 0 ]
+true=$(ls -l| grep -v ^ l| wc -l)
+echo $true
+}
+count=0
+while [ $count -eq 0 ]
 do
-echo " guess how many files are inside directory "
+echo " guess the number of files in directory "
 read num
-if [ $num -lt $true_a ]
+if [ $count -lt $num ]
 then
-echo "guess is less than the number of files in directory"
-elif [ $num -gt $true_a ]
+echo "is less than the number of files in directory"
+elif [ $count -gt $num ]
 then
-echo "guess is greater than number of files in directory"
-else
-echo "guess is correct"
-flag=1
-break;
+echo " is greater than number of files in directory"
 fi
 done
-}
-echo "guess number of files in current directory"
-guessing
+
