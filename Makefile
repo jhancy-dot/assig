@@ -1,10 +1,7 @@
-#/usr/bin/env bash
-all:README.md
-README.md:gameguessing.sh
-touch README.md
-echo "#gameguessing" > README.md
-echo $$(date)(time) >> README.md
-echo "\n" >> README.md
-wc -l gameguessing.sh| egrep -0"[0-9]+" >> README. md
-clean:
+README.md:guess.sh
+echo "#gameguessing assignment" > README.md
+echo $(date)$(time) >> README.md
+echo "the amount of lines of code" >> README.md
+wc -l guess.sh >> README. md
+Clean 
 rm README.md
